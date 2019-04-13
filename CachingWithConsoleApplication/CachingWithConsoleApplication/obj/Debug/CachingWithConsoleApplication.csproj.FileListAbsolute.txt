@@ -1,0 +1,6 @@
+c:\users\kab7.l7software.000\documents\visual studio 2012\Projects\CachingWithConsoleApplication\CachingWithConsoleApplication\bin\Debug\CachingWithConsoleApplication.exe.config
+c:\users\kab7.l7software.000\documents\visual studio 2012\Projects\CachingWithConsoleApplication\CachingWithConsoleApplication\bin\Debug\CachingWithConsoleApplication.exe
+c:\users\kab7.l7software.000\documents\visual studio 2012\Projects\CachingWithConsoleApplication\CachingWithConsoleApplication\bin\Debug\CachingWithConsoleApplication.pdb
+c:\users\kab7.l7software.000\documents\visual studio 2012\Projects\CachingWithConsoleApplication\CachingWithConsoleApplication\obj\Debug\CachingWithConsoleApplication.csprojResolveAssemblyReference.cache
+c:\users\kab7.l7software.000\documents\visual studio 2012\Projects\CachingWithConsoleApplication\CachingWithConsoleApplication\obj\Debug\CachingWithConsoleApplication.exe
+c:\users\kab7.l7software.000\documents\visual studio 2012\Projects\CachingWithConsoleApplication\CachingWithConsoleApplication\obj\Debug\CachingWithConsoleApplication.pdb

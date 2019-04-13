@@ -1,0 +1,121 @@
+﻿@model List<TB.Domain.BE.Product>
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">CAMPAÑAS MAS RECIENTES</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                ProductName
+                            </th>
+                            <th>
+                                ProductDescription
+                            </th>
+                            <th>
+                                Price
+                            </th>
+                            <th>
+                                Vat
+                            </th>
+                            <th>
+                                ItemsAvailable
+                            </th>
+                            <th>
+                                CampainDiscount
+                            </th>
+                            <th>
+                                ImagePath1
+                            </th>
+                            <th>
+                                ImagePath2
+                            </th>
+                            <th>
+                                ImagePath3
+                            </th>
+                            <th>
+                                TotalValue
+                            </th>
+
+                            <th>
+                                SoldQuantity
+                            </th>
+
+                        </tr>
+                        @*<tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Age</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>*@
+                    </thead>
+                    @*<tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Age</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                        </tfoot>*@
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductDescription)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Vat)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsCampain)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CampainDiscount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ImagePath1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ImagePath2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ImagePath3)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TotalValue)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SoldQuantity)
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

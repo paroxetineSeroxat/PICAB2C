@@ -1,0 +1,103 @@
+﻿@model IEnumerable<TB.Domain.BE.AppUser>
+@{
+    int canModify = 1;
+}
+<!-- Begin Page Content -->
+
+@*@Scripts.Render("~/js/AdminUsers.js")*@
+<script src="~/js/AdminUser.js"></script>
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Módulo de Administración de usuarios</h1>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <span class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#ModalUer" onclick="OpenModalSearchUser()">
+            <i class="fas fa-user fa-sm text-white-50"></i> Importar Usuarios
+        </span>
+    </div>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Usuarios Importados en el sistema</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Usuario</th>
+                            <th>Correo</th>
+                            <th>Perfil</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Usuario</th>
+                            <th>Correo</th>
+                            <th>Perfil</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.NameUser)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Mail)</td>
+                                <td>@item.Profile.Name</td>
+                                <td>
+                                    @if (@User.Identity.Name != @item.Name)
+                                    {
+                                        <span id="spn" data-toggle="modal" onclick="OpenModalActiveUser(@Json.Encode(item), 1)" data-target="#ModalUer" class='fa-stack fa-lg hover-cursor asset-selected'><i class='fa fa-square-o fa-stack-2x' style='color:#e95420'></i><i class='fa fa-info fa-stack-1x' style='color: black;'></i></span>
+                                    }
+                                    else
+                                    {
+                                        <span id="spn" data-toggle="modal" onclick="OpenModalActiveUser(@Json.Encode(item), 3)" data-target="#ModalUer" class='fa-stack fa-lg hover-cursor asset-selected'><i class='fa fa-square-o fa-stack-2x' style='color:#e95420'></i><i class='fa fa-info fa-stack-1x' style='color: black;'></i></span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ModalUer" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" style="background: #e95420; color: white;">
+            </div>
+            <div class="modal-body infoModal" sytle="padding: 5px;" align="center">
+                <!-- Dinamic data -->
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary" data-dismiss="modal" href="#" id="optionModal"><i class="fa fa-times" aria-hidden="true"> Cerrar</i></a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- /.container-fluid -->
+
+<script>
+    var listProfile = new Array();
+    listProfile = @Html.Raw(Json.Encode(ViewBag.listProfile));
+
+    var canModify = parseInt('@canModify');
+
+  
+</script>
+

@@ -1,0 +1,144 @@
+﻿@model List<TB.Domain.BE.Product>
+
+@*@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoginPartial.cshtml";
+}*@
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+       
+        <th>
+            ProductName
+        </th>
+        <th>
+            ProductDescription
+        </th>
+        <th>
+            SportEventId
+        </th>
+        <th>
+            HotelId
+        </th>
+        <th>
+            TransportId
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Vat
+        </th>
+        <th>
+            ItemsAvailable
+        </th>
+        <th>
+            ItemsBooked
+        </th>
+        <th>
+            IsCampain
+        </th>
+        <th>
+            StartDate
+        </th>
+        <th>
+            ExpirationDate
+        </th>
+        <th>
+            CampainDiscount
+        </th>
+        <th>
+            ImagePath1
+        </th>
+        <th>
+            ImagePath2
+        </th>
+        <th>
+            ImagePath3
+        </th>
+        <th>
+            TotalValue
+        </th>
+        <th>
+            ProductCode
+        </th>
+        <th>
+            SoldQuantity
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SportEventId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransportId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemsAvailable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemsBooked)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsCampain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpirationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CampainDiscount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagePath1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagePath2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagePath3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoldQuantity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
